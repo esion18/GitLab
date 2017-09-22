@@ -10,6 +10,8 @@
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/eman_pic</item>
+        <item>@mipmap/sizhe_cao</item>
+        <item>@mipmap/qihang_wu</item>
     </array>
 
     <string-array name="spinner_names">
@@ -17,6 +19,8 @@
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
         <item>Emmanuel Sion</item>
+        <item>Sizhe Cao</item>
+        <item>Qihang Wu</item>
     </string-array>
 
 </resources>
