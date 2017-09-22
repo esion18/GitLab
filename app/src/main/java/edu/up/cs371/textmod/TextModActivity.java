@@ -31,7 +31,6 @@ public class TextModActivity extends ActionBarActivity {
     private ImageView imageView; // the view that shows the image
 
     private Button CopyButton;
-    private EditText editText;
     private String[] spinnerNames;
     private Spinner spinner;
 
@@ -94,7 +93,7 @@ public class TextModActivity extends ActionBarActivity {
         return true;
     }
 
-    }
+
     public boolean reverse(View v){
         String sentence = editText.getText().toString();
         if (editText!= null){
@@ -134,7 +133,7 @@ public class TextModActivity extends ActionBarActivity {
     /**
      * class that handles our spinner's selection events
      */
-    private class MySpinnerListener implements OnItemSelectedListener {
+    public class MySpinnerListener implements OnItemSelectedListener {
 
         /**
          * @see android.widget.AdapterView.OnItemSelectedListener#onItemSelected(
