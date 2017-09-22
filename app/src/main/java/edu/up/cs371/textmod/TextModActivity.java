@@ -85,11 +85,38 @@ public class TextModActivity extends ActionBarActivity {
         CopyButton = (Button)findViewById(R.id.button2);
         editText = (EditText) findViewById(R.id.editText);
 
-        editText = (EditText) findViewById(R.id.editText);
+    }
+
+    public boolean switchCases (View v) {
+
+        String txt = editText.getText().toString();
+        char[] characters = txt.toCharArray();
+        int n = characters.length;
+        char ch;
+        int i;
+        for (i=0; i<n; i++) {
+
+            if (i%2==0) {
+
+                ch = Character.toLowerCase(characters[i]);
+                characters[i]=ch;
+
+            } else {
+
+                ch = Character.toUpperCase(characters[i]);
+                characters[i]=ch;
+
+            }
+
+        }
+
+        editText.setText(new String(characters));
+
+        return true;
 
     }
 
-    public boolean clear(View V){
+    public boolean clear(View v) {
 
         editText.setText("");
 
