@@ -17,6 +17,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
@@ -30,6 +32,13 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
+
+    private Button CopyButton;
+    private String[] spinnerNames;
+    private Spinner spinner;
+
+    private EditText editText;
+
     private EditText editText;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -43,13 +52,15 @@ public class TextModActivity extends ActionBarActivity {
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
+        editText = (EditText)findViewById(R.id.editText);
+
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
-        String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
+        spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, spinnerNames);
@@ -75,6 +86,8 @@ public class TextModActivity extends ActionBarActivity {
 
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
+        CopyButton = (Button)findViewById(R.id.button2);
+        editText = (EditText) findViewById(R.id.editText);
 
         editText = (EditText) findViewById(R.id.editText);
 
@@ -87,7 +100,22 @@ public class TextModActivity extends ActionBarActivity {
         return true;
 
     }
+    public boolean OnCopyName(View v){
+        String copy = editText.getText().toString();
+        int i = spinner.getSelectedItemPosition();
+        editText.setText(""+copy+spinnerNames[i]);
+        return true;
+    }
 
+
+    public boolean reverse(View v){
+        String sentence = editText.getText().toString();
+        if (editText!= null){
+            sentence = new StringBuffer(sentence).reverse().toString();
+        }
+        editText.setText(sentence);
+        return true;
+    }
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
@@ -119,7 +147,7 @@ public class TextModActivity extends ActionBarActivity {
     /**
      * class that handles our spinner's selection events
      */
-    private class MySpinnerListener implements OnItemSelectedListener {
+    public class MySpinnerListener implements OnItemSelectedListener {
 
         /**
          * @see android.widget.AdapterView.OnItemSelectedListener#onItemSelected(
