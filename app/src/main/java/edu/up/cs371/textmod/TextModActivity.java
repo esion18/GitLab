@@ -36,6 +36,7 @@ public class TextModActivity extends ActionBarActivity {
     private String[] spinnerNames;
     private Spinner spinner;
     private EditText editText;
+    private Button removePunctuation;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -50,7 +51,7 @@ public class TextModActivity extends ActionBarActivity {
         imageView = (ImageView)findViewById(R.id.imageView);
         editText = (EditText)findViewById(R.id.editText);
 
-
+        removePunctuation = (Button)findViewById(R.id.button4);
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
@@ -88,7 +89,15 @@ public class TextModActivity extends ActionBarActivity {
         editText = (EditText) findViewById(R.id.editText);
 
     }
+    public boolean removePunctuation(View V){
+        String text = editText.getText().toString();
+        text = text.replaceAll("[][(){}\"_:,.;!?<>%*&^%$#-+=@~`'\\//]]", "");
 
+        editText.setText(text+"");
+
+        return true;
+
+    }
     public boolean clear(View V){
 
         editText.setText("");

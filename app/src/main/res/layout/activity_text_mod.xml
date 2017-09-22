@@ -1,22 +1,21 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:background="@android:color/holo_blue_light"
+    android:orientation="vertical"
     tools:context=".TextModActivity">
 
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Space
             android:layout_width="0sp"
@@ -24,11 +23,11 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Text to process: "
-            android:id="@+id/textView"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="@dimen/label_font_size" />
 
         <EditText
@@ -43,33 +42,33 @@
         <Space
             android:layout_width="0sp"
             android:layout_height="match_parent"
-            android:layout_weight="1"  />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Space
             android:layout_width="0sp"
             android:layout_height="match_parent"
-            android:layout_weight="1"  />
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/button_color"
-            android:onClick="clear"
-            android:editable="false"
             android:clickable="true"
+            android:editable="false"
+            android:onClick="clear"
             android:text="@string/clear_button_text"
             android:textColor="@color/button_text_color"
             android:textSize="@dimen/button_font_size" />
@@ -80,13 +79,13 @@
             android:layout_weight="1" />
 
         <Button
+            android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/button_color"
             android:text="@string/upper_button_text"
-            android:id="@+id/button6"
-            android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:textSize="@dimen/button_font_size" />
 
         <Space
             android:layout_width="0sp"
@@ -94,13 +93,13 @@
             android:layout_weight="1" />
 
         <Button
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/button_color"
             android:text="@string/lower_button_text"
-            android:id="@+id/button7"
-            android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:textSize="@dimen/button_font_size" />
 
         <Space
             android:layout_width="0sp"
@@ -113,10 +112,10 @@
             android:layout_height="wrap_content"
             android:background="@color/button_color"
             android:clickable="true"
+            android:onClick="reverse"
             android:text="@string/reverse_button_text"
             android:textColor="@color/button_text_color"
-            android:textSize="@dimen/button_font_size"
-            android:onClick="reverse"/>
+            android:textSize="@dimen/button_font_size" />
 
         <Space
             android:layout_width="0sp"
@@ -137,29 +136,42 @@
         <Space
             android:layout_width="0sp"
             android:layout_height="match_parent"
-            android:layout_weight="1"  />
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:clickable="true"
+            android:onClick="removePunctuation"
+            android:text="RemPunc"
+            android:textColor="@color/button_text_color"
+            android:textSize="@dimen/button_font_size" />
+
     </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Space
             android:layout_width="0sp"
             android:layout_height="match_parent"
-            android:layout_weight="10"  />
+            android:layout_weight="10" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <Space
                 android:layout_width="match_parent"
@@ -168,9 +180,9 @@
                 android:isScrollContainer="false" />
 
             <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="@dimen/spinner_width"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinner"
                 android:layout_weight="0"
                 android:background="@color/spinner_color" />
 
@@ -186,9 +198,9 @@
             android:layout_weight="1" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="@dimen/image_size"
             android:layout_height="@dimen/image_size"
-            android:id="@+id/imageView"
             android:src="@mipmap/kitten" />
 
         <Space
@@ -201,7 +213,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
 
 </LinearLayout>
