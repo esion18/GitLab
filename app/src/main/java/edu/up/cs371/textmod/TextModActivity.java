@@ -16,9 +16,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
+
+import static edu.up.cs371.textmod.R.id.editText;
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -27,7 +30,7 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
-
+    private EditText editText;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -72,6 +75,16 @@ public class TextModActivity extends ActionBarActivity {
 
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
+
+        editText = (EditText) findViewById(R.id.editText);
+
+    }
+
+    public boolean clear(View V){
+
+        editText.setText("");
+
+        return true;
 
     }
 
@@ -128,4 +141,5 @@ public class TextModActivity extends ActionBarActivity {
             // your code here
         }
     }
+
 }
