@@ -94,13 +94,13 @@
             android:layout_weight="1" />
 
         <Button
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/button_color"
             android:text="@string/lower_button_text"
-            android:id="@+id/button7"
-            android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:textSize="@dimen/button_font_size" />
 
         <Space
             android:layout_width="0sp"
@@ -138,12 +138,26 @@
             android:layout_width="0sp"
             android:layout_height="match_parent"
             android:layout_weight="1"  />
+
+        <Button
+            android:id="@+id/Remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.65"
+            android:background="@color/button_color"
+            android:onClick="Remove"
+            android:text="REMOVE SPACE"
+            android:textColor="@color/button_text_color"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/button_font_size" />
+
     </LinearLayout>
 
     <Space
+        android:id="@+id/remove"
         android:layout_width="match_parent"
         android:layout_height="0sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1" />
 
 
     <LinearLayout

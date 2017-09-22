@@ -112,6 +112,13 @@ public class TextModActivity extends ActionBarActivity {
         editText.setText(sentence);
         return true;
     }
+
+    public boolean Remove(View v){
+        String sentence = editText.getText().toString();
+        sentence = sentence.replaceAll("\\s+","");
+        editText.setText(sentence);
+        return true;
+    }
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
