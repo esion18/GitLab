@@ -32,13 +32,9 @@ public class TextModActivity extends ActionBarActivity {
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
-
     private Button CopyButton;
     private String[] spinnerNames;
     private Spinner spinner;
-
-    private EditText editText;
-
     private EditText editText;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
